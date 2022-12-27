@@ -7,7 +7,7 @@ output "VPC_CIDR" {
 }
 
 output "SUBNET_IDS" {
-  value = module.vpc.SUBNETS_IDS
+  value = module.vpc.SUBNET_IDS
 }
 
 output "SUBNET_CIDR" {
