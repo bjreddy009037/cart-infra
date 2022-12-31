@@ -10,6 +10,3 @@ variable "EC_NODE_TYPE" {}
 variable "EC_NODE_COUNT" {}
 variable "EC_FAMILY" {}
 
-variable "VPC_ID" {}
-variable "VPC_CIDR" {}
-variable "SUBNET_IDS" {}
