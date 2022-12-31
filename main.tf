@@ -21,6 +21,19 @@ module "elasticache" {
   VPC_ID         = module.vpc.VPC_ID
   VPC_CIDR       = module.vpc.VPC_CIDR
   SUBNET_IDS     = module.vpc.SUBNET_IDS
+}
 
-
+module "app" {
+  depends_on              = [module.vpc]
+  source                  = "github.com/bjreddy009037/tf-module-mutable"
+  NODE_TYPE               = var.EC2_NODE_TYPE
+  ENV                     = var.ENV
+  COMPONENT               = var.COMPONENT
+  ONDEMAND_INSTANCE_COUNT = var.ONDEMAND_INSTANCE_COUNT
+  SPOT_INSTANCE_COUNT     = var.SPOT_INSTANCE_COUNT
+  PORT                    = var.PORT
+  WORKSTATION_IP          = var.WORKSTATION_IP
+  VPC_ID                  = module.vpc.VPC_ID
+  VPC_CIDR                = module.vpc.VPC_CIDR
+  SUBNET_IDS              = module.vpc.SUBNET_IDS
 }
