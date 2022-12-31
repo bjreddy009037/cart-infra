@@ -4,8 +4,12 @@ variable "COMPONENT" {}
 variable "SUBNET_CIDR" {}
 variable "AZ" {}
 
-variable "ENGINE" {}
-variable "ENGINE_VERSION" {}
-variable "NODE_TYPE" {}
-variable "NODE_COUNT" {}
-variable "FAMILY" {}
+variable "EC_ENGINE" {}
+variable "EC_ENGINE_VERSION" {}
+variable "EC_NODE_TYPE" {}
+variable "EC_NODE_COUNT" {}
+variable "EC_FAMILY" {}
+
+variable "VPC_ID" {}
+variable "VPC_CIDR" {}
+variable "SUBNET_IDS" {}

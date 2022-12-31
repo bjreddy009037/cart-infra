@@ -11,13 +11,16 @@ module "vpc" {
 module "elasticache" {
   depends_on = [module.vpc]
   source = "github.com/bjreddy009037/tf-module-elasticache-redis"
-  ENGINE = var.ENGINE
-  ENGINE_VERSION = var.ENGINE_VERSION
-  NODE_TYPE = var.NODE_TYPE
+  ENGINE = var.EC_ENGINE
+  ENGINE_VERSION = var.EC_ENGINE_VERSION
+  NODE_TYPE = var.EC_NODE_TYPE
   ENV = var.ENV
   COMPONENT = var.COMPONENT
-  NODE_COUNT = var.NODE_COUNT
-  FAMILY = var.FAMILY
+  NODE_COUNT = var.EC_NODE_COUNT
+  FAMILY = var.EC_FAMILY
+  VPC_ID = module.vpc.VPC_ID
+  VPC_CIDR = module.vpc.VPC_CIDR
+  SUBNET_IDS = module.vpc.SUBNET_IDS
 
 
 }
